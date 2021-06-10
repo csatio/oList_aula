@@ -214,7 +214,7 @@ def get_models(DATA_PATH,model_path):
                         "model":best_model_xgb_nt,
                         "auc":{"test": auc_test_xgb_nt, "oot":auc_oot}} )
 
-    model_s.to_pickle("best_model_olist_xgb_nt.pkl")
+    model_s.to_pickle(model_path + "best_model_olist_xgb_nt.pkl")
 
    
 

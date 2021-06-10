@@ -5,7 +5,7 @@ import os
 import sqlalchemy
 from tqdm import tqdm
 
-def get_abt(DATA_PATH,QUERY_PATH,primeira_sfra,ultima_safra):
+def get_abt(DATA_PATH,QUERY_PATH,primeira_safra,ultima_safra):
 
     with open( QUERY_PATH, 'r' ) as open_file:
         query = open_file.read()
@@ -32,6 +32,6 @@ def get_abt(DATA_PATH,QUERY_PATH,primeira_sfra,ultima_safra):
             query_exec += f'''INSERT INTO TB_ABT
                                 SELECT '{safra}' as dt_ref,* FROM vw_olist_abt_p2;'''
 
-    print(safra)
-    exec_etl(query_exec, con)
+        print(safra)
+        exec_etl(query_exec, con)
         

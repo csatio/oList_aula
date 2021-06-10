@@ -1,3 +1,5 @@
+import sys
+
 from abt import get_abt
 from train import get_models
 
@@ -9,6 +11,12 @@ primeira_safra = "2018-04-01"
 ultima_safra = "2018-06-01"
 
 if __name__ == '__main__':
-    get_abt(DATA_PATH,QUERY_PATH,primeira_safra,ultima_safra)
-    get_models(DATA_PATH, model_path)
+    
+    if '-abtonly' in sys.argv:
+        get_abt(DATA_PATH,QUERY_PATH,primeira_safra,ultima_safra)
+    elif '-trainonly' in sys.argv:
+        get_models(DATA_PATH, model_path)
+    else:
+        get_abt(DATA_PATH,QUERY_PATH,primeira_safra,ultima_safra)
+        get_models(DATA_PATH, model_path)
 

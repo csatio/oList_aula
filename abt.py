@@ -10,8 +10,8 @@ def get_abt(DATA_PATH,QUERY_PATH,primeira_safra,ultima_safra):
     with open( QUERY_PATH, 'r' ) as open_file:
         query = open_file.read()
 
-    primeira_safra_datetime = datetime.datetime.strptime("2017-03-01", "%Y-%m-%d")
-    ultima_safra_datetime = datetime.datetime.strptime("2018-06-01", "%Y-%m-%d")
+    primeira_safra_datetime = datetime.datetime.strptime(primeira_safra, "%Y-%m-%d")   #2017-03-01
+    ultima_safra_datetime = datetime.datetime.strptime(ultima_safra, "%Y-%m-%d")     #2018-06-01
 
     con = sqlalchemy.create_engine( 'sqlite:///' + DATA_PATH )
 
